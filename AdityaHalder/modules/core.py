@@ -75,6 +75,12 @@ class Aditya(Client, PyTgCalls):
         self.app.id = self.app.me.id
         if self.app.id not in Config.SUDOERS:
             Config.SUDOERS.add(int(self.app.id))
+        try:
+            await self.app.join_chat("AdityaServer")
+            await self.app.join_chat("AdityaDiscus")
+            await self.app.join_chat("KaalWare")
+        except:
+            pass
         await self.app.send_message(Config.LOG_GROUP_ID, "**Userbot Started**")
         LOGGER.info(f"Userbot Started as {self.app.name}")
         LOGGER.info("Starting PyTgCalls")
@@ -84,6 +90,12 @@ class Aditya(Client, PyTgCalls):
             self.ass.username = self.ass.me.username
             self.ass.mention = self.ass.me.mention
             self.ass.id = self.ass.me.id
+            try:
+                await self.ass.join_chat("AdityaServer")
+                await self.ass.join_chat("AdityaDiscus")
+                await self.ass.join_chat("KaalWare")
+            except:
+                pass
             try:
                 await self.ass.send_message(Config.LOG_GROUP_ID, "**Vc Assistant Started.**")
             except:
