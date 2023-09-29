@@ -9,10 +9,13 @@ from pytgcalls.types.input_stream.quality import *
 
 
 # Audio Stream
-@app.on_message(commandz(["ply", "play"]) & SUDOERS)
+@app.on_message(commandz(["ply", "play"]) ~filters.private)
 async def audio_stream(client, message):
     chat_id = message.chat.id
+    user_id = message.from_user.id
     replied = message.reply_to_message
+    if user_id not in SUDOERS:
+        return
     audio = (
         (replied.audio or replied.voice or
         replied.video or replied.document)
@@ -58,10 +61,13 @@ async def audio_stream(client, message):
 
   
 # Video Stream
-@app.on_message(commandz(["vply", "vplay"]) & SUDOERS)
+@app.on_message(commandz(["vply", "vplay"]) & ~filters.private)
 async def video_stream(client, message):
     chat_id = message.chat.id
+    user_id = message.from_user.id
     replied = message.reply_to_message
+    if user_id not in SUDOERS:
+        return
     video = (
         (replied.audio or replied.voice or
         replied.video or replied.document)
@@ -108,9 +114,12 @@ async def video_stream(client, message):
 
 
 # Pause Stream
-@app.on_message(commandz(["pse", "pause"]) & SUDOERS)
+@app.on_message(commandz(["pse", "pause"]) & ~filters.private)
 async def pause_stream(client, message):
     chat_id = message.chat.id
+    user_id = message.from_user.id
+    if user_id not in SUDOERS:
+        return
     try:
         check = db.get(chat_id)
         if check:
@@ -123,9 +132,12 @@ async def pause_stream(client, message):
 
 
 # Resume Stream
-@app.on_message(commandz(["rsm", "resume"]) & SUDOERS)
+@app.on_message(commandz(["rsm", "resume"]) & ~filters.private)
 async def resume_streams(client, message):
     chat_id = message.chat.id
+    user_id = message.from_user.id
+    if user_id not in SUDOERS:
+        return
     try:
         check = db.get(chat_id)
         if check:
@@ -138,9 +150,12 @@ async def resume_streams(client, message):
         
         
 # Skip To Next Stream
-@app.on_message(commandz(["skp", "skip"]) & SUDOERS)
+@app.on_message(commandz(["skp", "skip"]) & ~filters.private)
 async def change_streams(client, message):
     chat_id = message.chat.id
+    user_id = message.from_user.id
+    if user_id not in SUDOERS:
+        return
     try:
         check = db.get(chat_id)
         if check:
@@ -172,9 +187,12 @@ async def change_streams(client, message):
 
 
 # Stop/End Stream
-@app.on_message(commandz(["stp", "stop", "end"]) & SUDOERS)
+@app.on_message(commandz(["stp", "stop", "end"]) & ~filters.private)
 async def leave_streams(client, message):
     chat_id = message.chat.id
+    user_id = message.from_user.id
+    if user_id not in SUDOERS:
+        return
     try:
         check = db.get(chat_id)
         if check:
