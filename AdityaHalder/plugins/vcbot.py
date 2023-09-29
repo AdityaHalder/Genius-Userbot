@@ -178,7 +178,7 @@ async def leave_streams(client, message):
     try:
         check = db.get(chat_id)
         if check:
-            check.pop(0)
+            db.pop(chat_id)
             await call.leave_group_call(chat_id)
             return await eor(message, "**Stream Stopped !**")
         else:
