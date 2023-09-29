@@ -1,6 +1,15 @@
 from .. import SUDOERS
 from pyrogram.types import *
 from traceback import format_exc
+from typing import Callable
+
+
+def sudo_user_only(func: Callable) -> Callable:
+    async def decorator(client, message: Message):
+        if message.from_user.id in SUDOERS:
+            return await func(client, message)
+        
+    return decorator
 
 
 def cb_wrapper(func):
