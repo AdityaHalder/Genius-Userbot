@@ -54,3 +54,6 @@ SUDOERS = var.SUDOERS
 
 from .modules.func import eor
 eor = eor
+
+from .modules.misc import from sudo_user_only
+sudo_user_only = sudo_user_only
