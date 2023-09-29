@@ -75,6 +75,7 @@ async def stream_end_handler(_, update: Update):
             que = db[chat_id]
             que.pop(0)
             if len(que) == 0:
+                db.pop(chat_id)
                 return await call.leave_group_call(chat_id)
             else:
                 file = check[0]["file"]
