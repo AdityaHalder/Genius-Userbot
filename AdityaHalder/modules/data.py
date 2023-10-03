@@ -5,6 +5,7 @@ from typing import Dict, List, Union
 sudoersdb = mongodb.sudoers
 lraiddb = mongodb.lraid
 rraiddb = mongodb.rraid
+permitdb = mongodb.pmprotection
 
 
 
@@ -107,3 +108,38 @@ async def del_rraid_user(user_id: int):
     if not is_rraid:
         return
     return await rraiddb.delete_one({"user_id": user_id})
+
+
+async def is_approved() -> list:
+    pm = await permitdb.find_one({'permit': 'protection'})
+    if not pm:
+        return []
+    return pm['users']
+
+
+async def approve(user_ud: int):
+    pm = await is_approved()
+    pm.append(user_ud)
+    await permitdb.update_one(
+        {'permit': 'protection'},
+        {
+            '$set': {
+                'users': pm
+            }
+        },
+        upsert=True
+    )
+
+
+async def disapprove(user_ud: int):
+    pm = await is_approved()
+    pm.remove(user_ud)
+    await permitdb.update_one(
+        {'permit': 'protection'},
+        {
+            '$set': {
+                'users': pm
+            }
+        },
+        upsert=True
+    )

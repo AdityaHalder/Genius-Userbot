@@ -22,6 +22,9 @@ class Config(object):
     COMMAND_PREFIXES = list(getenv("COMMAND_PREFIXES", ". ! > *").split())
     USERBOT_PICTURE = getenv("USERBOT_PICTURE", None)
     LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", 0))
+    PMPERMIT = getenv("PMPERMIT", "True")
+    PERMIT_MSG = getenv("PERMIT_MSG", None)
+    PERMIT_LIMIT = int(getenv("PERMIT_LIMIT", 6))
   
   
     # do not edit these variables

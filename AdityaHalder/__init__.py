@@ -43,6 +43,8 @@ log = LOGGER
 var = Config()
 
 db = {}
+flood = {}
+OLD_MSG = {}
 
 commandx = commandx
 commandz = commandz
