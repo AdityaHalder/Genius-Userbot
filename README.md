@@ -36,13 +36,14 @@ cp Internal.env Internal && python3 -m AdityaHalder
 8. Finnally, just hit ```ctrl+a+d``` to minimize your bot for run in background.
 
 <h2>Repository Credits:</h2>
-Founder: [Aditya Halder](https://github.com/AdityaHalder)
 
-Devs: [Ayiin'xD](https://github.com/AyiinXd)
+[Aditya Halder](https://github.com/AdityaHalder): Owner Of This Repostory.
 
-Dan : [Pyrogram](https://github.com/pyrogram/pyrogram)
+[Ayiin'xD](https://github.com/AyiinXd): A Developer Of This Repositry.
 
-Laky64 : [PyTgCalls](https://github.com/pytgcalls/pytgcalls)
+[Dan](https://github.com/pyrogram/pyrogram): Thank For Pyrogram Library.
+
+[Laky64](https://github.com/pytgcalls/pytgcalls): Thank You For PyTgCalls.
 
 <h2>Updates and Support</h2>
 <p title="Support">You can join us on any issue related to Genius-Userbot Update and Support in Telegram.</p>
