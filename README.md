@@ -37,8 +37,11 @@ cp Internal.env Internal && python3 -m AdityaHalder
 
 <h2>Repository Credits:</h2>
 Founder: [Aditya Halder](https://github.com/AdityaHalder)
+
 Devs: [Ayiin'xD](https://github.com/AyiinXd)
+
 Dan : [Pyrogram](https://github.com/pyrogram/pyrogram)
+
 Laky64 : [PyTgCalls](https://github.com/pytgcalls/pytgcalls)
 
 <h2>Updates and Support</h2>
