@@ -175,14 +175,14 @@ async def unblock_user_func(client: Client, message: Message):
     await message.reply("Unblock User Successfully!!!")
 
 
-__NAME__ = "PmGuard"
+__NAME__ = "PM"
 __MENU__ = f"""
 **🥀 Private Message Guard ✨...**
 
 `.a` or `.approve`
 For approve user
 
-`.d` or `.disapprove`
+`.da` or `.disapprove`
 For rejected user
 
 `.block`
