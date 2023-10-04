@@ -37,9 +37,12 @@ cp Internal.env Internal && python3 -m AdityaHalder
 
 <h2>Repository Credits:</h2>
 
-[Aditya Halder](https://github.com/AdityaHalder): Owner Of This Repostory.\n
-[Ayiin'xD](https://github.com/AyiinXd): A Developer Of This Repositry.\n
-[Dan](https://github.com/pyrogram/pyrogram): Thanks For Pyrogram Library.\n
+[Aditya Halder](https://github.com/AdityaHalder): Owner Of This Repostory.
+
+[Ayiin'xD](https://github.com/AyiinXd): A Developer Of This Repositry.
+
+[Dan](https://github.com/pyrogram/pyrogram): Thanks For Pyrogram Library.
+
 [Laky64](https://github.com/pytgcalls/pytgcalls): Thanks For PyTgCalls.
 
 <h2>Updates and Support</h2>
