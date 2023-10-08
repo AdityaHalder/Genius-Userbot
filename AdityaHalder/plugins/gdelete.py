@@ -12,7 +12,7 @@ from ..modules.data import (is_gdel_user,
 from ..vars import GDELSUB as GDEL_USERS
 
 
-@app.on_message(command(["gdl", "gdel", "gdelete"]) & filters.user(SUPER_USERS))
+@app.on_message(command(["gdl", "gdel", "gdelete"]) & SUPUSER)
 async def add_gdelete_user(client, message: Message):
     if not message.reply_to_message:
         if len(message.command) != 2:
@@ -26,7 +26,7 @@ async def add_gdelete_user(client, message: Message):
         mention = message.reply_to_message.from_user.mention
     if user_id == message.from_user.id:
         return await message.reply_text("You want to add Global Delete yourself? How Fool!")
-    elif user_id == SUPUSER:
+    elif user_id in SUPUSER:
         return await message.reply_text("Should i activate Global Delete on myself? Lol")
     elif user_id in SUDOERS:
         return await message.reply_text("You want add Global Delete on sudo user?")
@@ -40,7 +40,7 @@ async def add_gdelete_user(client, message: Message):
 
 
 
-@app.on_message(command(["ungdl", "ungdel", "ungdelete"]) & filters.user(SUPER_USERS))
+@app.on_message(command(["ungdl", "ungdel", "ungdelete"]) & SUPUSER)
 async def del_gdelete_user(client, message: Message):
     if not message.reply_to_message:
         if len(message.command) != 2:
@@ -63,7 +63,7 @@ async def del_gdelete_user(client, message: Message):
 
 
 
-@app.on_message(command(["gdlst", "gdellist", "gdelusers"]) & filters.user(SUPER_USERS))
+@app.on_message(command(["gdlst", "gdellist", "gdelusers"]) & SUPUSER)
 async def gdelete_users_list(client, message: Message):
     counts = await get_gdel_count()
     if counts == 0:
