@@ -93,8 +93,8 @@ async def gdelete_users_list(client, message: Message):
         return await txt.edit_text(msg)
         
 
-__PLUGIN__ = "Gᴅᴇʟ"
-__HELP__ = f"""
+__NAME__ = "Gᴅᴇʟ"
+__MENU__ = f"""
 **__Rᴇᴘʟʏ Tᴏ Aɴ Usᴇʀ Oʀ Gɪᴠᴇ
 Usᴇʀɴᴀᴍᴇ Tᴏ Aᴄᴛɪᴠᴀᴛᴇ Gʟᴏʙᴀʟ
 Dᴇʟᴇᴛᴇ Oɴ Usᴇʀ:__**
