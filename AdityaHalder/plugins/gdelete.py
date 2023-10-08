@@ -12,9 +12,7 @@ from ..modules.data import (is_gdel_user,
 
 
 
-GDEL_USERS = GDELSUB
-
-@app.on_message(command(["gdl", "gdel", "gdelete"]) & SUPUSER)
+@app.on_message(commandx(["gdl", "gdel", "gdelete"]) & SUPUSER)
 async def add_gdelete_user(client, message: Message):
     if not message.reply_to_message:
         if len(message.command) != 2:
@@ -35,14 +33,14 @@ async def add_gdelete_user(client, message: Message):
     is_gdel = await is_gdel_user(user_id)
     if is_gdel:
         return await message.reply_text("{0} is already affected by **Global Delete**".format(mention))
-    if user_id not in GDEL_USERS:
-        GDEL_USERS.add(user_id)
+    if user_id not in GDELSUB:
+        GDELSUB.add(user_id)
     await add_gdel_user(user_id)
     await message.reply_text("**Global Delete Activated.")
 
 
 
-@app.on_message(command(["ungdl", "ungdel", "ungdelete"]) & SUPUSER)
+@app.on_message(commandx(["ungdl", "ungdel", "ungdelete"]) & SUPUSER)
 async def del_gdelete_user(client, message: Message):
     if not message.reply_to_message:
         if len(message.command) != 2:
@@ -57,15 +55,15 @@ async def del_gdelete_user(client, message: Message):
     is_gdel = await is_gdel_user(user_id)
     if not is_gdel:
         return await message.reply_text("{0} is not affected by Global Delete.".format(mention))
-    if user_id in GDEL_USERS:
-        GDEL_USERS.remove(user_id)
+    if user_id in GDELSUB:
+        GDELSUB.remove(user_id)
     await del_gdel_user(user_id)
     await message.reply_text("De-Activated Global Delete On {0}".format(mention)
     )
 
 
 
-@app.on_message(command(["gdlst", "gdellist", "gdelusers"]) & SUPUSER)
+@app.on_message(commandx(["gdlst", "gdellist", "gdelusers"]) & SUPUSER)
 async def gdelete_users_list(client, message: Message):
     counts = await get_gdel_count()
     if counts == 0:
