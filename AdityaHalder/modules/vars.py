@@ -35,6 +35,7 @@ class Config(object):
     CRAIDUB = filters.user([])
     LRAIDUB = filters.user([])
     RRAIDUB = filters.user([])
+    GDELSUB = filters.user([])
     GBANSUB = filters.user([])
     GMUTEUB = filters.user([])
     #######################################
