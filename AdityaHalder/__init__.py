@@ -52,6 +52,7 @@ commandz = commandz
 PLUGINS = var.PLUGINS
 SUPUSER = var.SUPUSER
 SUDOERS = var.SUDOERS
+GDELSUB = var.GDELSUB
 
 
 from .modules.func import eor
