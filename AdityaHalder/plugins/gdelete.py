@@ -7,7 +7,7 @@ from pyrogram.types import Message
 
 from .. import *
 from ..vars import GDEL_USERS
-from ..modules.dbase import (
+from ..modules.data import (
     is_gdel_user,
     get_gdel_user,
     get_gdel_count,
