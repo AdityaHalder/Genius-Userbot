@@ -9,7 +9,7 @@ from .. import *
 from ..modules.data import (is_gdel_user,
     get_gdel_user, get_gdel_count,
     add_gdel_user, del_gdel_user)
-from ..vars import GDELSUB as GDEL_USERS
+from ..var import GDELSUB as GDEL_USERS
 
 
 @app.on_message(command(["gdl", "gdel", "gdelete"]) & SUPUSER)
