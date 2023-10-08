@@ -12,7 +12,7 @@ from ..modules.data import (is_gdel_user,
 
 
 
-GDEL_USERS = vars.GDELSUB
+GDEL_USERS = GDELSUB
 
 @app.on_message(command(["gdl", "gdel", "gdelete"]) & SUPUSER)
 async def add_gdelete_user(client, message: Message):
