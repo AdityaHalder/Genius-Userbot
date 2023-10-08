@@ -9,7 +9,11 @@ from .. import *
 from ..modules.data import (is_gdel_user,
     get_gdel_user, get_gdel_count,
     add_gdel_user, del_gdel_user)
-from ..modules.config import GDELSUB as GDEL_USERS
+from ..modules.vars.config import (GDELSUB
+                            as GDEL_USERS)
+
+
+
 
 @app.on_message(command(["gdl", "gdel", "gdelete"]) & SUPUSER)
 async def add_gdelete_user(client, message: Message):
