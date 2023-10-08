@@ -26,7 +26,7 @@ async def add_gdelete_user(client, message: Message):
         mention = message.reply_to_message.from_user.mention
     if user_id == message.from_user.id:
         return await message.reply_text("You want to add Global Delete yourself? How Fool!")
-    elif user_id in SUPUSER:
+    elif user_id == SUPUSER:
         return await message.reply_text("Should i activate Global Delete on myself? Lol")
     elif user_id in SUDOERS:
         return await message.reply_text("You want add Global Delete on sudo user?")
