@@ -6,14 +6,10 @@ from pyrogram import *
 from pyrogram.types import Message
 
 from .. import *
-from ..vars import GDEL_USERS
-from ..modules.data import (
-    is_gdel_user,
-    get_gdel_user,
-    get_gdel_count,
-    add_gdel_user,
-    del_gdel_user
-)
+from ..modules.data import (is_gdel_user,
+    get_gdel_user, get_gdel_count,
+    add_gdel_user, del_gdel_user)
+from ..vars import GDELSUB as GDEL_USERS
 
 
 @app.on_message(command(["gdl", "gdel", "gdelete"]) & filters.user(SUPER_USERS))
