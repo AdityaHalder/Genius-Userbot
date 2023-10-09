@@ -5,7 +5,7 @@ from .. import *
 from ..resource.fonts import Fonts
 
 
-@app.on_message(commandx(["font", "fonts"]))
+@app.on_message(filters.command(["font", "fonts"]))
 async def style_buttons(c, m, cb=False):
     buttons = [
         [
