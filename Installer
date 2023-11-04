@@ -1,7 +1,7 @@
 asyncio
 GitPython
 motor
-py-tgcalls==1.0.0
+py-tgcalls==1.0.1
 git+https://github.com/pyrogrammod/pyrogrammod
 python-dotenv
 telegraph
