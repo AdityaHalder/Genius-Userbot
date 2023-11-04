@@ -3,9 +3,8 @@ from ..modules.func import *
 from ..modules.utils import *
 
 from pyrogram import *
-from pytgcalls import StreamType
+from pytgcalls.types import *
 from pytgcalls.types.input_stream import *
-from pytgcalls.types.input_stream.quality import *
 
 
 # Audio Stream
@@ -42,9 +41,8 @@ async def audio_stream(client, message):
                 chat_id,
                 AudioPiped(
                     file,
-                    HighQualityAudio(),
+                    AudioParameters.from_quality(AudioQuality.STUDIO),
                 ),
-                stream_type=StreamType().pulse_stream
             )
             await put_que(chat_id, file, "Audio")
             await m.edit("**🥳 Streaming Started!**")
@@ -91,10 +89,9 @@ async def video_stream(client, message):
                 chat_id,
                 AudioVideoPiped(
                     file,
-                    HighQualityAudio(),
-                    HighQualityVideo(),
+                    AudioParameters.from_quality(AudioQuality.STUDIO),
+                    VideoParameters.from_quality(VideoQuality.HD_720p),
                 ),
-                stream_type=StreamType().pulse_stream
             )
             await put_que(chat_id, file, "Video")
             await m.edit("**🥳 Streaming Started!**")
