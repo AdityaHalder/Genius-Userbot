@@ -4,7 +4,7 @@ from .. import call, db
 from typing import Union
 from pyrogram.types import Message
 from pytgcalls.types import *
-from pytgcalls.types.stream import *
+from pytgcalls.types.input_stream import *
 
 
 async def edit_or_reply(message: Message, *args, **kwargs) -> Message:
@@ -86,13 +86,13 @@ async def stream_end_handler(_, update: Update):
                 if type == "Audio":
                     stream = AudioPiped(
                         file,
-                        HighQualityAudio(),
+                        AudioParameters.from_quality(AudioQuality.STUDIO),
                     )
                 elif type == "Video":
                     stream = AudioVideoPiped(
                         file,
-                        HighQualityAudio(),
-                        HighQualityVideo(),
+                        AudioParameters.from_quality(AudioQuality.STUDIO),
+                        VideoParameters.from_quality(VideoQuality.HD_720p),
                     )
                 return await call.change_stream(chat_id, stream)
         return
