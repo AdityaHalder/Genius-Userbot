@@ -1,3 +1,5 @@
+import asyncio
+
 from .. import call, db
 from typing import Union
 from pyrogram.types import Message
@@ -76,6 +78,7 @@ async def stream_end_handler(_, update: Update):
             que.pop(0)
             if len(que) == 0:
                 db.pop(chat_id)
+                await asyncio.sleep(1)
                 return await call.leave_group_call(chat_id)
             else:
                 file = check[0]["file"]
