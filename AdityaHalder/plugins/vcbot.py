@@ -152,13 +152,13 @@ async def change_streams(client, message):
                 if type == "Audio":
                     stream = AudioPiped(
                         file,
-                        HighQualityAudio(),
+                        AudioParameters.from_quality(AudioQuality.STUDIO),
                     )
                 elif type == "Video":
                     stream = AudioVideoPiped(
                         file,
-                        HighQualityAudio(),
-                        HighQualityVideo(),
+                        AudioParameters.from_quality(AudioQuality.STUDIO),
+                        VideoParameters.from_quality(VideoQuality.HD_720p),
                     )
                 await call.change_stream(chat_id, stream)
                 return await eor(message, "🥳 Skipped !")
