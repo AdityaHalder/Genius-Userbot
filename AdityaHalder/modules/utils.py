@@ -32,12 +32,12 @@ def get_youtube_video(query: str):
 
 async def get_youtube_stream(link: str):
     proc = await asyncio.create_subprocess_exec(
-        'yt-dlp',
-        '-g',
-        '-f',
+        "yt-dlp",
+        "-g",
+        "-f",
         # CHANGE THIS BASED ON WHAT YOU WANT
-        'best[height<=?720][width<=?1280]',
-        link,
+        "best[height<=?720][width<=?1280]",
+        f"{link}",
         stdout=asyncio.subprocess.PIPE,
         stderr=asyncio.subprocess.PIPE,
     )
