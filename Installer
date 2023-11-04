@@ -1,8 +1,8 @@
 asyncio
 GitPython
 motor
-py-tgcalls
-pyrogram
+py-tgcalls==1.0.0
+git+https://github.com/pyrogrammod/pyrogrammod
 python-dotenv
 telegraph
 TgCrypto
