@@ -17,14 +17,14 @@ async def audio_stream(client, message):
         replied.video or replied.document)
         if replied else None
     )
-    m = await eor(message, "**🔄 Processing ...**")
+    m = await eor(message, "**🥂🍾𝐏ʀᴏᴄᴇssɪɴɢ ...**")
     try:
         if audio:
-            await m.edit("**📥 Downloading ...**")
+            await m.edit("**📥 Ha Samaj Gaya ...**")
             file = await replied.download()
         else:
             if len(message.command) < 2:
-                 return await m.edit("**🤖 Give Some Query ...**")
+                 return await m.edit("**Khatam Ho Gaya.. ...**")
             text = message.text.split(None, 1)[1]
             if "?si=" in text:
                 query = text.split("?si")[0]
@@ -34,7 +34,7 @@ async def audio_stream(client, message):
             search = get_youtube_video(query)
             stream = search[0]
             file = await get_youtube_stream(stream)
-        await m.edit("**🔄 Processing ...**")
+        await m.edit("**🍾🥂𝐏ʀᴏᴄᴇssɪɴɢ ...**")
         check = db.get(chat_id)
         if not check:
             await call.join_group_call(
@@ -45,7 +45,7 @@ async def audio_stream(client, message):
                 ),
             )
             await put_que(chat_id, file, "Audio")
-            await m.edit("**🥳 Streaming Started!**")
+            await m.edit("**ho gaya🎉!**")
             await m.delete()
         else:
             pos = await put_que(chat_id, file, "Audio")
