@@ -16,9 +16,9 @@ PM_SECURITY GENIUS-USERBOT
 """
 
 DEFAULT = """
-WELCOME....
+𝐖ᴇʟᴄᴏᴍᴇ.....
 
-Hi, this is the keeper of private messages. Don't spam ya or I'll block you. Wait until my master receives your message.
+ᴛʜɪs ɪs ᴛʜᴇ ᴋᴇᴇᴘᴇʀ ᴏғ ᴘʀɪᴠᴀᴛᴇ ᴍᴇssᴀɢᴇ . Dᴏɴ'ᴛ sᴘᴀᴍ ʏᴀ ᴏʀ  I ᴡɪʟʟ ʙᴇ ʙʟᴏᴄᴋ ʏᴏᴜ . ᴡᴀɪᴛ ᴜɴᴛɪʟ ᴍʏ ᴍᴀsᴛᴇʀ ʀᴇᴄᴇɪᴠᴇᴅ ʏᴏᴜʀ ᴍᴇssᴀɢᴇ .
 """
 
 
