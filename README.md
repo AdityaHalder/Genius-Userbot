@@ -33,7 +33,6 @@ Genius-Userbot is an advanced & powerful multi-featured Telegram userbot.
 
 <h2>📑 Acknowledgement / Credits</h2>
 
-- [**`Pyrogram:`**](https://github.com/pyrogram) Genius-Userbot functions based on this mtproto client library.
-
-- [**`Py-TgCalls:**`](https://github.com/py-tgcalls) Streaming system of Genius-Userbot based on this library.
+- [**`Pyrogram:`**](https://github.com/pyrogram) All functions of Genius-Userbot based on this mtproto client library.
+- [**`Py-TgCalls:`**](https://github.com/py-tgcalls) Streaming system of Genius-Userbot based on this library.
 
