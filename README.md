@@ -21,7 +21,7 @@ Genius-Userbot is an advanced & powerful multi-featured Telegram userbot.
 <h2>🤝 Contributing</h2>
 <p title="Contributing">As Genius-Userbot is an open-source project, all kinds of contributions are respectfully welcomed, and I also extend my sincere thanks to all contributors.</p>
 
-<h2>Updates & Support</h2>
+<h2>🌐 Updates & Support</h2>
 <p title="Support">You can join Genius-Userbot's official Telegram channel and group on Telegram for any Genius-Userbot updates and support-related issues.</p>
 
 - Telegram Channel: [**`@AdityaServer`**](https://t.me/adityaserver)
