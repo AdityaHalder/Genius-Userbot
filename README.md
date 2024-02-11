@@ -12,13 +12,13 @@ Genius-Userbot is an advanced & powerful multi-featured Telegram userbot.
 <img src="AdityaHalder/resource/images/Heroku.svg" alt="Deploy to Heroku"></a>
 </p>
 
-<h2>About Genius-Userbot</h2>
+<h2>🤖 About Genius-Userbot</h2>
 <p title="Genius-Userbot">Genius-Userbot is an open-source Telegram userbot developed by using the Python programming language and Pyrogram MTProto client library of the Telegram API and PyTgCalls library, a secure and reliable way to interact with the Telegram platform.</p>
 
 > [!IMPORTANT]
 > If you use Genius-Userbot, it is important that you have proper knowledge about it. You should follow the [**`Documentation`**](https://t.me/adityaserver) to learn about Genius-Userbot.
 
-<h2>Contributing</h2>
+<h2>🤝 Contributing</h2>
 <p title="Contributing">As Genius-Userbot is an open-source project, all kinds of contributions are respectfully welcomed, and I also extend my sincere thanks to all contributors.</p>
 
 <h2>Updates & Support</h2>
