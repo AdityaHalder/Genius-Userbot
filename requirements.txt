@@ -4,5 +4,5 @@ pyrogram==2.0.106
 python-dotenv==1.0.1
 py-tgcalls==1.1.2
 tgcrypto==1.2.5
-youtube-search==2.1.2
+youtube-search-python
 yt-dlp==2023.12.30
