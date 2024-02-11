@@ -7,7 +7,7 @@ from ...modules.mongo.streams import *
 from ...modules.utilities import queues
 
 
-@app.on_message(cdx(["leave", "leavevc"]) & ~filters.private)
+@app.on_message(cdx(["lve", "leave", "leavevc"]) & ~filters.private)
 @sudo_users_only
 async def leave_vc(client, message):
     chat_id = message.chat.id
