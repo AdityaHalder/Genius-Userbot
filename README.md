@@ -1,0 +1,31 @@
+<p align="center">
+<a href="https://github.com/AdityaHalder/Genius-Userbot"><img src="AdityaHalder/resource/images/Genius.png" height="128" width="128" alt="Genius-Userbot"/></a>
+</p>
+
+<p align="center">
+<b>Genius-Userbot</b><br/>
+Genius-Userbot is an advanced & powerful multi-featured Telegram userbot.
+</p>
+
+<p align="center">
+<a href="https://heroku.com/deploy?template=https://github.com/AdityaHalder/Genius-Userbot">
+<img src="AdityaHalder/resource/images/Heroku.svg" alt="Deploy to Heroku"></a>
+</p>
+
+<h2>About Genius-Userbot</h2>
+<p title="Genius-Userbot">Genius-Userbot is an open-source Telegram userbot developed by using the Python programming language and Pyrogram MTProto client library of the Telegram API and PyTgCalls library, a secure and reliable way to interact with the Telegram platform.</p>
+
+> [!IMPORTANT]
+> If you use Genius-Userbot, it is important that you have proper knowledge about it. You should follow the [**`Documentation`**](https://t.me/adityaserver) to learn about Genius-Userbot.
+
+<h2>Contributing</h2>
+<p title="Contributing">As Genius-Userbot is an open-source project, all kinds of contributions are respectfully welcomed, and I also extend my sincere thanks to all contributors.</p>
+
+<h2>Updates & Support</h2>
+<p title="Support">You can join Genius-Userbot's official Telegram channel and group on Telegram for any Genius-Userbot updates and support-related issues.</p>
+
+- Telegram Channel: [**`@AdityaServer`**](https://t.me/adityaserver)
+
+- Telegram Group: [**`@AdityaDiscus`**](https://t.me/adityadiscus)
+> [!WARNING]  
+> Verify the username of Genius-Userbot's official Telegram channel and group. If you face a problem with a fake channel or group, Genius-Userbot will not take responsibility for it, so I request that you verify Genius-Userbot's official Telegram channel and group.

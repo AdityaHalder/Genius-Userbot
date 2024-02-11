@@ -1,0 +1,59 @@
+{
+    "name": "Genius-Userbot",
+    "description": "Genius-Userbot is an advanced & powerful multi-featured Telegram userbot.",
+    "logo": "https://graph.org/file/292b9dfe74532e7174fd2.png",
+    "keywords": [
+        "genius-userbot",
+        "telegram-userbot",
+        "telegram-music-bot",
+        "telegram-video-bot"
+    ],
+    "repository": "https://github.com/AdityaHalder/Genius-Userbot",
+    "stack": "container",
+    "env": {
+        "API_ID": {
+            "description": "Enter your api id here.",
+            "value": "",
+            "required": true
+        },
+        "API_HASH": {
+            "description": "Enter your api hash here.",
+            "value": "",
+            "required": true
+        },
+        "BOT_TOKEN": {
+            "description": "Enter your bot token here",
+            "value": "",
+            "required": true
+        },
+        "STRING_SESSION": {
+            "description": "Enter your pyrogram v2 string session here.",
+            "value": "",
+            "required": true
+        },
+        "MONGO_DB_URL": {
+            "description": "Enter your mongodb url here.",
+            "value": "",
+            "required": true
+        },
+        "LOG_GROUP_ID": {
+            "description": "Enter your private log group id here.",
+            "value": "",
+            "required": true
+        }
+    },
+    "formation": {
+        "web": {
+            "quantity": 1,
+            "size": "standard-2x"
+        }
+    },
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        },
+        {
+            "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+        }
+    ]
+}
