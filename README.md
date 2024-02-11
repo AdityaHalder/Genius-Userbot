@@ -26,6 +26,14 @@ Genius-Userbot is an advanced & powerful multi-featured Telegram userbot.
 
 - Telegram Channel: [**`@AdityaServer`**](https://t.me/adityaserver)
 
-- Telegram Group: [**`@AdityaDiscus`**](https://t.me/adityadiscus)
+- Telegram Group:   [**`@AdityaDiscus`**](https://t.me/adityadiscus)
 > [!WARNING]  
 > Verify the username of Genius-Userbot's official Telegram channel and group. If you face a problem with a fake channel or group, Genius-Userbot will not take responsibility for it, so I request that you verify Genius-Userbot's official Telegram channel and group.
+
+
+<h2>📑 Acknowledgement / Credits</h2>
+
+- [**`Pyrogram:`**](https://github.com/pyrogram) Genius-Userbot functions based on this mtproto client library.
+
+- [**`Py-TgCalls:**`](https://github.com/py-tgcalls) Streaming system of Genius-Userbot based on this library.
+
