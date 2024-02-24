@@ -46,13 +46,13 @@ COMMAND_PREFIXES = list(getenv("COMMAND_PREFIXES", ". !").split())
 
 # PM GUARD VARS
 PM_GUARD = bool(getenv("PM_GUARD", True))
-PM_GUARD_TEXT = getenv("PM_GUARD_TEXT", "**🥀 Hey, I am an advanced & superfast high quality userbot assistant with an upgraded version security system.\n\n🌿 I can't let you message my owner's dm without my owner's permission.\n\n🌺 My owner is offline now, please wait until my owner allows you.\n\n🍂 Please don't spam here, because spamming will force me to block you from my owner id.**")
-PM_GUARD_LIMIT = int(getenv("PM_GUARD_LIMIT", 5))
+PM_GUARD_TEXT = getenv("PM_GUARD_TEXT", "**🥀 Hello, Dear ◄⏤𝆺𝅥⃝⃪⃜🌿♡𝐇ҽʅʅσ 𝐃ҽαɾ 𝐖ҽʅƈσɱҽ 𝐇σɯ 𝐂αɳ 𝐈 𝐇ҽʅρ 𝐘συ. 𝐏ʅҽαʂҽ 𝐋ҽαʋҽ 𝐘συɾ 𝐌ҽʂʂαɠҽ...┽🌌⍣\n\n◄⏤𝆺𝅥⃝⃪⃜🌿♡𝐈 𝐖ιʅʅ 𝐑ҽρʅყ 𝐓σ 𝐘συɾ 𝐂σɱɱҽɳƚ 𝐖ԋҽɳ 𝐈 𝐂σɱҽ 𝐎ɳʅιɳҽ. 𝐏ʅҽαʂҽ 𝐃σ 𝐍σƚ 𝐒ҽɳԃ 𝐌ҽʂʂαɠҽʂ.─‌⃛☯─‌⃛‌⃝❤️\n\n◄⏤‌𝆺𝅥⃝⃪⃜🌿♡𝐌σɾҽ 𝐓ԋαɳ 𝐓ҽɳ 𝐓ιɱҽʂ 𝐎ƚԋҽɾɯιʂҽ 𝐘συ 𝐌αყ 𝐆ҽƚ 𝐁ʅσƈƙҽԃ, 𝐒σɾɾყ 𝐅σɾ 𝐓ԋαƚ.─‌⃛☯─‌⃛‌⃝🌹**")
+PM_GUARD_LIMIT = int(getenv("PM_GUARD_LIMIT", 10))
 
 
 
 # USERBOT DEFAULT IMAGE
-USERBOT_PICTURE = getenv("USERBOT_PICTURE", "https://graph.org/file/1217cb1e402b99fa47fdf.jpg")
+USERBOT_PICTURE = getenv("USERBOT_PICTURE", "https://telegra.ph/file/c4d98ff413f0cdb2c44ed.jpg")
 
 
 
