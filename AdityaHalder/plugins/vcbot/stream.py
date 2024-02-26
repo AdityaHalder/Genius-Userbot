@@ -41,8 +41,7 @@ async def audio_stream(client, message):
             else:
                 query = message.text.split(None, 1)[1]
             results = await get_result(query)
-            link = results[0]
-            file = await get_stream(link, type)
+            file = results[0]
         try:
             a = await call.get_call(chat_id)
             if a.status == "not_playing":
@@ -99,8 +98,7 @@ async def video_stream(client, message):
             else:
                 query = message.text.split(None, 1)[1]
             results = await get_result(query)
-            link = results[0]
-            file = await get_stream(link, type)
+            file = results[0]
         try:
             a = await call.get_call(chat_id)
             if a.status == "not_playing":
@@ -166,8 +164,7 @@ async def audio_stream_(client, message):
             else:
                 query = message.text.split(None, 1)[1]
             results = await get_result(query)
-            link = results[0]
-            file = await get_stream(link, type)
+            file = results[0]
         try:
             a = await call.get_call(chat_id)
             if a.status == "not_playing":
@@ -229,8 +226,7 @@ async def video_stream_(client, message):
             else:
                 query = message.text.split(None, 1)[1]
             results = await get_result(query)
-            link = results[0]
-            file = await get_stream(link, type)
+            file = results[0]
         try:
             a = await call.get_call(chat_id)
             if a.status == "not_playing":
