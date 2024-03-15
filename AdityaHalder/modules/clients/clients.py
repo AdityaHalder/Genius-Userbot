@@ -1,4 +1,4 @@
-import os, sys
+import asyncio, os, sys
 
 from pyrogram import Client
 from pyrogram import filters
@@ -132,6 +132,17 @@ async def run_async_clients():
             pass
     LOGGER.info("Starting Helper Robot ...")
     await bot.start()
+    try:
+        await app.send_message("BotFather", "/start")
+        await asyncio.sleep(1)
+        await app.send_message("BotFather", "/setinline")
+        await asyncio.sleep(1)
+        await app.send_message("BotFather", f"@{bot.me.username}")
+        await asyncio.sleep(1)
+        await app.send_message("BotFather", "Genius Userbot")
+    except Exception as e:
+        print(e)
+        pass
     LOGGER.info("Helper Robot Started.")
     try:
         await bot.send_message(LOG_GROUP_ID, "**Helper Robot Started.**")
