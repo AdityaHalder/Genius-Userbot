@@ -24,9 +24,9 @@ Genius-Userbot is an advanced & powerful multi-featured Telegram userbot.
 <h2>🌐 Updates & Support</h2>
 <p title="Support">You can join Genius-Userbot's official Telegram channel and group on Telegram for any Genius-Userbot updates and support-related issues.</p>
 
-- Telegram Channel: [**`@AdityaServer`**](https://t.me/adityaserver)
+- Telegram Updates: [**`@AdityaServer`**](https://t.me/adityaserver)
 
-- Telegram Group:   [**`@AdityaDiscus`**](https://t.me/adityadiscus)
+- Telegram Support: [**`@AdityaDiscus`**](https://t.me/adityadiscus)
 > [!WARNING]  
 > Verify the username of Genius-Userbot's official Telegram channel and group. If you face a problem with a fake channel or group, Genius-Userbot will not take responsibility for it, so I request that you verify Genius-Userbot's official Telegram channel and group.
 
