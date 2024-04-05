@@ -4,7 +4,7 @@
 
 <p align="center">
 <b>Genius-Userbot</b><br/>
-Genius-Userbot is an advanced & powerful multi-featured Telegram userbot.
+Genius-Userbot is an advanced & powerful multi-featured Telegram userbot by .
 </p>
 
 <p align="center">
