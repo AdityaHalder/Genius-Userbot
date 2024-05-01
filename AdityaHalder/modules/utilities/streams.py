@@ -46,6 +46,6 @@ async def close_stream(chat_id):
     except QueueEmpty:
         pass
     try:
-        return await call.leave_group_call(chat_id)
+        return await call.leave_call(chat_id)
     except:
         pass
