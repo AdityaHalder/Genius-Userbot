@@ -9,6 +9,11 @@ from .streams import run_stream, close_stream
 async def run_async_calls():
     @call.on_update(
         filters.chat_update(
+            ChatUpdate.Status.CLOSED_VOICE_CHAT
+        )
+    )
+    @call.on_update(
+        filters.chat_update(
             ChatUpdate.Status.KICKED | ChatUpdate.Status.LEFT_GROUP,
         ),
     )
