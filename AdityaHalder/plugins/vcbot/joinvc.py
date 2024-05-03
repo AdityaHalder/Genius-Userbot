@@ -9,7 +9,7 @@ from pytgcalls.exceptions import GroupCallNotFound
 async def join_vc(client, message):
     chat_id = message.chat.id
     a_calls = await call.calls
-    if_chat = a.calls.get(chat_id)
+    if_chat = a_calls.calls.get(chat_id)
     if if_chat:
         return await eor(
             message, "**Already Joined VC!**"
@@ -36,7 +36,7 @@ async def join_vc_(client, message):
             "**🥀 No Stream Chat Set❗**"
     )
     a_calls = await call.calls
-    if_chat = a.calls.get(chat_id)
+    if_chat = a_calls.calls.get(chat_id)
     if if_chat:
         return await eor(
             message, "**Already Joined VC!**"
