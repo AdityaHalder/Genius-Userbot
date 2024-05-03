@@ -17,7 +17,8 @@ from ...modules.utilities.streams import *
 async def audio_stream(client, message):
     chat_id = message.chat.id
     aux = await eor(message, "**Processing ...**")
-    calls = await call.calls.get(chat_id)
+    calls = await call.calls
+    if_chat = calls.get(chat_id)
     audio = (
         (
             message.reply_to_message.audio
@@ -44,7 +45,7 @@ async def audio_stream(client, message):
                 query = message.text.split(None, 1)[1]
             results = await get_result(query)
             file = results[0]
-        if not calls:
+        if not if_chat:
             stream = await run_stream(file, type)
             await call.play(chat_id, stream)
             await aux.edit("Playing!")
