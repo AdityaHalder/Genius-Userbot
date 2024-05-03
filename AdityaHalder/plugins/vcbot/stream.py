@@ -47,7 +47,7 @@ async def audio_stream(client, message):
             file = results[0]
 
         if if_chat:
-            status = calls["chat_id"]["status"]
+            status = if_chat["status"]
             if status == Call.Status.IDLE:
                 stream = await run_stream(file, type)
                 await call.play(chat_id, stream)
