@@ -8,18 +8,22 @@ from pytgcalls.exceptions import GroupCallNotFound
 @sudo_users_only
 async def join_vc(client, message):
     chat_id = message.chat.id
-    try:
-        #a = await call.get_call(chat_id)
-        #if (a.status == "not_playing"
-         #   or a.status == "playing"
-           # or a.status == "paused"
-       # ):
-            #await eor(message, "**Already Joined!**")
-    #except GroupCallNotFound:
-        await call.play(chat_id)
-        await eor(message, "**Joined VC!**")
-    except Exception as e:
-        print(f"Error: {e}")
+    a_calls = await call.calls
+    if_chat = a.calls.get(chat_id)
+    if if_chat:
+        return await eor(
+            message, "**Already Joined VC!**"
+        )
+    if not if_chat:
+        try:
+            await call.play(chat_id)
+            return await eor(
+                message, "**Joined VC!**"
+            )
+        except Exception as e:
+            print(f"Error: {e}")
+            pass
+        
 
 
 @app.on_message(cdz(["cjoin", "cjoinvc"]))
@@ -31,15 +35,18 @@ async def join_vc_(client, message):
         return await eor(message,
             "**🥀 No Stream Chat Set❗**"
     )
-    try:
-        a = await call.get_call(chat_id)
-        if (a.status == "not_playing"
-            or a.status == "playing"
-            or a.status == "paused"
-        ):
-            await eor(message, "**Already Joined!**")
-    except GroupCallNotFound:
-        await call.join_group_call(chat_id)
-        await eor(message, "**Joined VC!**")
-    except Exception as e:
-        print(f"Error: {e}")
+    a_calls = await call.calls
+    if_chat = a.calls.get(chat_id)
+    if if_chat:
+        return await eor(
+            message, "**Already Joined VC!**"
+        )
+    if not if_chat:
+        try:
+            await call.play(chat_id)
+            return await eor(
+                message, "**Joined VC!**"
+            )
+        except Exception as e:
+            print(f"Error: {e}")
+            pass
