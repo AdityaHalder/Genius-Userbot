@@ -1,7 +1,6 @@
 from asyncio.queues import QueueEmpty
 from pyrogram import filters
 from pytgcalls.exceptions import *
-from pytgcalls.types import Call
 
 from ... import *
 from ...modules.mongo.streams import *
@@ -30,7 +29,7 @@ async def audio_stream(client, message):
     type = "Audio"
     try:
         if audio:
-            await aux.edit("Downloading ...")
+            await eor(aux, "Downloading ...")
             file = await client.download_media(
                 message.reply_to_message
             )
@@ -48,28 +47,27 @@ async def audio_stream(client, message):
 
         if if_chat:
             status = if_chat["status"]
-            if status == Call.Status.IDLE:
+            if status == 4:
                 stream = await run_stream(file, type)
                 await call.play(chat_id, stream)
-                await aux.edit("Playing!")
+                await eor(aux, "Playing!")
             elif (
-                status == Call.Status.PLAYING
-                or status == Call.Status.PAUSED
+                status == 1 or status == 2
             ):
                 position = await queues.put(
                     chat_id, file=file, type=type
                 )
-                await aux.edit(f"Queued At {position}")
+                await eor(aux, f"Queued At {position}")
         else:
             stream = await run_stream(file, type)
             try:
                 await call.play(chat_id, stream)
-                await aux.edit("Playing!")
+                await eor(aux, "Playing!")
             except NoActiveGroupCall:
-                return await aux.edit("No Active VC!")
+                return await eor(aux, "No Active VC!")
     except Exception as e:
        print(f"Error: {e}")
-       await aux.edit("**Please Try Again !**")
+       await eor(aux, "**Please Try Again !**")
     except:
         return
 
