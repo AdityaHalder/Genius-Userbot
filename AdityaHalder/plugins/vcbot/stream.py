@@ -42,23 +42,9 @@ async def audio_stream(client, message):
                 query = message.text.split(None, 1)[1]
             results = await get_result(query)
             file = results[0]
-        try:
-            a = await call.get_call(chat_id)
-            if a.status == "not_playing":
-                stream = await run_stream(file, type)
-                await call.change_stream(chat_id, stream)
-                await aux.edit("Playing!")
-            elif (a.status == "playing"
-                or a.status == "paused"
-            ):
-                position = await queues.put(
-                    chat_id, file=file, type=type
-                )
-                await aux.edit(f"Queued At {position}")
-        except GroupCallNotFound:
-            stream = await run_stream(file, type)
-            await call.join_group_call(chat_id, stream)
-            await aux.edit("Playing!")
+        stream = await run_stream(file, type)
+        await call.play(chat_id, stream)
+        await aux.edit("Playing!")
     except Exception as e:
        print(f"Error: {e}")
        return await aux.edit("**Please Try Again !**")
