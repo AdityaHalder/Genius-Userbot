@@ -20,6 +20,10 @@ async def join_vc(client, message):
             return await eor(
                 message, "**Joined VC!**"
             )
+        except NoActiveGroupCall:
+            return await eor(
+                message, "**No Active VC!**"
+            )
         except Exception as e:
             print(f"Error: {e}")
             pass
