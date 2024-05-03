@@ -46,7 +46,7 @@ async def audio_stream(client, message):
         file = results[0]
 
     if if_chat:
-        status = if_chat["status"]
+        status = calls[chat_id]["status"]
         print(status)
         if status == 4:
             stream = await run_stream(file, type)
