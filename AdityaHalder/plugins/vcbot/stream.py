@@ -1,6 +1,7 @@
 from asyncio.queues import QueueEmpty
 from pyrogram import filters
 from pytgcalls.exceptions import GroupCallNotFound
+from pytgcalls.types.Call import Status
 
 from ... import *
 from ...modules.mongo.streams import *
@@ -16,6 +17,7 @@ from ...modules.utilities.streams import *
 async def audio_stream(client, message):
     chat_id = message.chat.id
     aux = await eor(message, "**Processing ...**")
+    calls = await call.calls().get(chat_id)
     audio = (
         (
             message.reply_to_message.audio
@@ -42,12 +44,24 @@ async def audio_stream(client, message):
                 query = message.text.split(None, 1)[1]
             results = await get_result(query)
             file = results[0]
-        stream = await run_stream(file, type)
-        await call.play(chat_id, stream)
-        await aux.edit("Playing!")
+        if not calls:
+            stream = await run_stream(file, type)
+            await call.play(chat_id, stream)
+            await aux.edit("Playing!")
+        elif calls["status"] == Status.IDLE:
+            await call.play(chat_id, stream)
+            await aux.edit("Playing!")
+        elif (
+            calls["status"] == Status.PLAYING
+            or calls["status"] == Status.PAUSED
+        ):
+            position = await queues.put(
+                chat_id, file=file, type=type
+            )
+            await aux.edit(f"Queued At {position}")
     except Exception as e:
        print(f"Error: {e}")
-       return await aux.edit("**Please Try Again !**")
+       await aux.edit("**Please Try Again !**")
     except:
         return
 
