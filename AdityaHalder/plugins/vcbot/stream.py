@@ -27,49 +27,45 @@ async def audio_stream(client, message):
         else None
     )
     type = "Audio"
-    try:
-        if audio:
-            await eor(aux, "Downloading ...")
-            file = await client.download_media(
-                message.reply_to_message
+    
+    if audio:
+        await aux.edit("Downloading ...")
+        file = await client.download_media(
+            message.reply_to_message
+        )
+    else:
+        if len(message.command) < 2:
+            return await aux.edit(
+                "**🥀 ɢɪᴠᴇ ᴍᴇ sᴏᴍᴇ ǫᴜᴇʀʏ ᴛᴏ\nᴘʟᴀʏ ᴍᴜsɪᴄ ᴏʀ ᴠɪᴅᴇᴏ❗...**"
             )
+        if "?si=" in message.text:
+            query = message.text.split(None, 1)[1].split("?si=")[0]
         else:
-            if len(message.command) < 2:
-                return await aux.edit(
-                    "**🥀 ɢɪᴠᴇ ᴍᴇ sᴏᴍᴇ ǫᴜᴇʀʏ ᴛᴏ\nᴘʟᴀʏ ᴍᴜsɪᴄ ᴏʀ ᴠɪᴅᴇᴏ❗...**"
-                )
-            if "?si=" in message.text:
-                query = message.text.split(None, 1)[1].split("?si=")[0]
-            else:
-                query = message.text.split(None, 1)[1]
-            results = await get_result(query)
-            file = results[0]
+            query = message.text.split(None, 1)[1]
+        results = await get_result(query)
+        file = results[0]
 
-        if if_chat:
-            status = if_chat["status"]
-            if status == 4:
-                stream = await run_stream(file, type)
-                await call.play(chat_id, stream)
-                await eor(aux, "Playing!")
-            elif (
-                status == 1 or status == 2
-            ):
-                position = await queues.put(
-                    chat_id, file=file, type=type
-                )
-                await eor(aux, f"Queued At {position}")
-        else:
+    if if_chat:
+        status = if_chat["status"]
+        print(status)
+        if status == 4:
             stream = await run_stream(file, type)
-            try:
-                await call.play(chat_id, stream)
-                await eor(aux, "Playing!")
-            except NoActiveGroupCall:
-                return await eor(aux, "No Active VC!")
-    except Exception as e:
-       print(f"Error: {e}")
-       await eor(aux, "**Please Try Again !**")
-    except:
-        return
+            await call.play(chat_id, stream)
+            await eor(aux, "Playing!")
+        elif (
+            status == 1 or status == 2
+        ):
+            position = await queues.put(
+                chat_id, file=file, type=type
+            )
+            await eor(aux, f"Queued At {position}")
+    else:
+        stream = await run_stream(file, type)
+        try:
+            await call.play(chat_id, stream)
+            await eor(aux, "Playing!")
+        except NoActiveGroupCall:
+            return await eor(aux, "No Active VC!")
 
 
 # Video Player
