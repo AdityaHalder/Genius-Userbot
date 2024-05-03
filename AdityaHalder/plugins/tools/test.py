@@ -7,7 +7,7 @@ async def get_call_stats(client, message):
     chat_id = message.chat.id
     calls = await call.calls
     chat_call = calls.get(chat_id)
-    call_status = chat_call["status"]
+    call_status = chat_call.status
     print(call_status)
     # await m.edit(f"**🤖 Pinged !\nLatency:** `{ms}` ms")
 
