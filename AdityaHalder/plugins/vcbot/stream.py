@@ -1,7 +1,7 @@
 from asyncio.queues import QueueEmpty
 from pyrogram import filters
 from pytgcalls.exceptions import GroupCallNotFound
-from pytgcalls.types.Call import Status
+from pytgcalls.types import Call
 
 from ... import *
 from ...modules.mongo.streams import *
@@ -48,12 +48,12 @@ async def audio_stream(client, message):
             stream = await run_stream(file, type)
             await call.play(chat_id, stream)
             await aux.edit("Playing!")
-        elif calls["status"] == Status.IDLE:
+        elif calls["status"] == Call.Status.IDLE:
             await call.play(chat_id, stream)
             await aux.edit("Playing!")
         elif (
-            calls["status"] == Status.PLAYING
-            or calls["status"] == Status.PAUSED
+            calls["status"] == Call.Status.PLAYING
+            or calls["status"] == Call.Status.PAUSED
         ):
             position = await queues.put(
                 chat_id, file=file, type=type
