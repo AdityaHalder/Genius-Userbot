@@ -17,7 +17,7 @@ from ...modules.utilities.streams import *
 async def audio_stream(client, message):
     chat_id = message.chat.id
     aux = await eor(message, "**Processing ...**")
-    calls = await call.calls().get(chat_id)
+    calls = await call.calls.get(chat_id)
     audio = (
         (
             message.reply_to_message.audio
