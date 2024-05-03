@@ -17,7 +17,7 @@ async def audio_stream(client, message):
     chat_id = message.chat.id
     aux = await eor(message, "**Processing ...**")
     calls = await call.calls
-    if_chat = calls.get(chat_id)
+    chat_call = calls.get(chat_id)
     audio = (
         message.reply_to_message.audio or message.reply_to_message.voice
         if message.reply_to_message else None
@@ -40,8 +40,7 @@ async def audio_stream(client, message):
         file = results[0]
 
     if if_chat:
-        status = calls[chat_id]["status"]
-        print(status)
+        status = chat_call.status
         if status == 4:
             stream = await run_stream(file, type)
             await call.play(chat_id, stream)
@@ -57,9 +56,9 @@ async def audio_stream(client, message):
         stream = await run_stream(file, type)
         try:
             await call.play(chat_id, stream)
-            await eor(aux, "Playing!")
+            await aux.edit("Playing!")
         except NoActiveGroupCall:
-            return await eor(aux, "No Active VC!")
+            return await aux.edit("No Active VC!")
 
 
 # Video Player
