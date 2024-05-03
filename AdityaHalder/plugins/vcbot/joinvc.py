@@ -1,7 +1,7 @@
 from ... import *
 from ...modules.mongo.streams import *
 from pyrogram import filters
-from pytgcalls.exceptions import GroupCallNotFound
+from pytgcalls.exceptions import NoActiveGroupCall
 
 
 @app.on_message(cdx(["join", "joinvc"]) & ~filters.private)
@@ -46,6 +46,10 @@ async def join_vc_(client, message):
             await call.play(chat_id)
             return await eor(
                 message, "**Joined VC!**"
+            )
+        except NoActiveGroupCall:
+            return await eor(
+                message, "**No Active VC!**"
             )
         except Exception as e:
             print(f"Error: {e}")
