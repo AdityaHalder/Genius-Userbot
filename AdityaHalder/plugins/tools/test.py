@@ -5,7 +5,8 @@ from datetime import datetime
 @sudo_users_only
 async def get_call_stats(client, message):
     calls = await call.calls
-    print(calls)
+    chat_call = await calls.get(chat_id)
+    print(chat_call)
     # await m.edit(f"**🤖 Pinged !\nLatency:** `{ms}` ms")
 
 
