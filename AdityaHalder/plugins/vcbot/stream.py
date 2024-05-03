@@ -19,20 +19,14 @@ async def audio_stream(client, message):
     calls = await call.calls
     if_chat = calls.get(chat_id)
     audio = (
-        (
-            message.reply_to_message.audio
-            or message.reply_to_message.voice
-        )
-        if message.reply_to_message
-        else None
+        message.reply_to_message.audio or message.reply_to_message.voice
+        if message.reply_to_message else None
     )
     type = "Audio"
     
     if audio:
         await aux.edit("Downloading ...")
-        file = await client.download_media(
-            message.reply_to_message
-        )
+        file = await client.download_media(message.reply_to_message)
     else:
         if len(message.command) < 2:
             return await aux.edit(
@@ -51,14 +45,14 @@ async def audio_stream(client, message):
         if status == 4:
             stream = await run_stream(file, type)
             await call.play(chat_id, stream)
-            await eor(aux, "Playing!")
+            await aux.edit("Playing!")
         elif (
             status == 1 or status == 2
         ):
             position = await queues.put(
                 chat_id, file=file, type=type
             )
-            await eor(aux, f"Queued At {position}")
+            await aux.edit(f"Queued At {position}")
     else:
         stream = await run_stream(file, type)
         try:
