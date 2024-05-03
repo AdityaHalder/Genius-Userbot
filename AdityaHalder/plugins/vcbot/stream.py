@@ -1,6 +1,6 @@
 from asyncio.queues import QueueEmpty
 from pyrogram import filters
-from pytgcalls.exceptions import GroupCallNotFound
+from pytgcalls.exceptions import *
 from pytgcalls.types import Call
 
 from ... import *
@@ -45,21 +45,28 @@ async def audio_stream(client, message):
                 query = message.text.split(None, 1)[1]
             results = await get_result(query)
             file = results[0]
-        if not if_chat:
+
+        if if_chat:
+            status = calls["chat_id"]["status"]
+            if status == Call.Status.IDLE:
+                stream = await run_stream(file, type)
+                await call.play(chat_id, stream)
+                await aux.edit("Playing!")
+            elif (
+                status == Call.Status.PLAYING
+                or status == Call.Status.PAUSED
+            ):
+                position = await queues.put(
+                    chat_id, file=file, type=type
+                )
+                await aux.edit(f"Queued At {position}")
+        else:
             stream = await run_stream(file, type)
-            await call.play(chat_id, stream)
-            await aux.edit("Playing!")
-        elif calls["status"] == Call.Status.IDLE:
-            await call.play(chat_id, stream)
-            await aux.edit("Playing!")
-        elif (
-            calls["status"] == Call.Status.PLAYING
-            or calls["status"] == Call.Status.PAUSED
-        ):
-            position = await queues.put(
-                chat_id, file=file, type=type
-            )
-            await aux.edit(f"Queued At {position}")
+            try:
+                await call.play(chat_id, stream)
+                await aux.edit("Playing!")
+            except NoActiveGroupCall:
+                return await aux.edit("No Active VC!")
     except Exception as e:
        print(f"Error: {e}")
        await aux.edit("**Please Try Again !**")
