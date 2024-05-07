@@ -1,3 +1,5 @@
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&background=429B37F9&center=true&random=false&width=435&lines=Plz+following+" alt="Typing SVG" /></a>
+
 <p align="center">
 <a href="https://github.com/AdityaHalder/Genius-Userbot"><img src="https://graph.org/file/f4e175b28e96bc3fb4cf4.jpg" height="270" width="480" alt="Genius-Userbot"/></a>
 </p>
@@ -35,4 +37,6 @@ Genius-Userbot is an advanced & powerful multi-featured Telegram userbot.
 
 - [**`Pyrogram:`**](https://github.com/pyrogram) All functions of Genius-Userbot based on this mtproto client library.
 - [**`Py-TgCalls:`**](https://github.com/py-tgcalls) Streaming system of Genius-Userbot based on this library.
+
+
 
